@@ -10,12 +10,14 @@ const VideoCard = ({ video, onClick }) => {
         src={video.snippet.thumbnails?.medium?.url || ""}
         alt={video.snippet.title}
       />
-      <Card.Body>
+      <Card.Body className="d-flex flex-column">
         <Card.Title>{video.snippet.title}</Card.Title>
         <Card.Text>{video.snippet.description}</Card.Text>
-        <Button variant="primary" onClick={() => onClick(video)}>
-          Watch
-        </Button>
+        <div className="mt-auto text-left">
+          <Button variant="primary" size="sm" onClick={() => onClick(video)}>
+            Watch
+          </Button>
+        </div>
       </Card.Body>
     </Card>
   );

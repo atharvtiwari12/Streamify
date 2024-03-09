@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import PlaylistHeader from "./PlaylistHeader";
 import VideoCard from "./VideoCard";
 import VideoModal from "./VideoModal";
 import styles from "./Playlist.module.css";
@@ -60,8 +59,8 @@ const Playlist = () => {
         <p>Loading...</p>
       ) : playlists.length > 0 ? (
         playlists.map((playlist) => (
-          <div key={playlist.id}>
-            <PlaylistHeader title={playlist.snippet?.title} />
+          <div key={playlist.id} className={styles.playlistContainer}>
+            <h3>{playlist.snippet?.title}</h3>
             <div className={styles.videosContainer}>
               {playlist.videos.length > 0 ? (
                 playlist.videos.map((video) => (

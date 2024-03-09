@@ -1,0 +1,15 @@
+.NavLink{
+  font-family: sans-serif;
+  align-items: center;
+  font-size: 1rem;
+}
+.Logo{
+  width: 7vw;
+  margin: 0 1rem;
+}
+.Navbar.Brand {
+  display: flex;
+  align-items: center;
+  padding: 0 0.5rem;
+}
+

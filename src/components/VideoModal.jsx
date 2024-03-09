@@ -1,6 +1,7 @@
 import React from "react";
 import Modal from "react-modal";
 import Button from "react-bootstrap/Button";
+import "./VideoModal.css";
 
 const VideoModal = ({ isOpen, onRequestClose, video }) => {
   return (
@@ -8,19 +9,31 @@ const VideoModal = ({ isOpen, onRequestClose, video }) => {
       isOpen={isOpen}
       onRequestClose={onRequestClose}
       contentLabel="Video Modal"
+      className="Video-modal"
     >
       <div>
-        <h2>{video.snippet.title}</h2>
+        <Button
+          variant="link"
+          onClick={onRequestClose}
+          className="btnClass"
+          style={{
+            position: "absolute",
+            top: "0",
+            right: "0",
+            padding: 0,
+            fontSize: "1.5rem",
+            textDecoration: "none",
+          }}
+        >
+          &times;
+        </Button>
         <iframe
           title={video.snippet.title}
-          width="560"
-          height="315"
+          width="760" //560
+          height="415" //315
           src={`https://www.youtube.com/embed/${video.snippet.resourceId.videoId}`}
           allowFullScreen
         ></iframe>
-        <Button variant="primary" onClick={onRequestClose}>
-          Close
-        </Button>
       </div>
     </Modal>
   );
