@@ -1,7 +1,39 @@
 .videosContainer {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 2px;
+}
+.videosContainer {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  scrollbar-width: none;
+  scrollbar-color: transparent transparent; 
+  &::-webkit-scrollbar {
+    width: 1px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: transparent;
+  }
+  /* Additional styling adjustments */
+  padding: 2px; /* Add padding to the container */
+  background-color: #f4f4f4; /* Set background color */
+  border-radius: 4px; /* Add border-radius for a rounded look */
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.1); /* Add box shadow for depth */
+}
+
+
+.videosContainer {
+  display: flex; /* Align videos in a row */
+  flex-wrap: nowrap; /* Prevent wrapping to a new line */
+  overflow-x: auto; /* Enable horizontal scrolling */
+  gap: 5px; /* Optional: space between cards */
+}
+
+
+.videoCard {
+  flex: 0 0 auto; 
+  min-width: 240px; 
 }
 
 .videoThumbnail {

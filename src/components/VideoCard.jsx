@@ -1,10 +1,11 @@
 import React from "react";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
+import styles from "./VideoCard.module.css";
 
 const VideoCard = ({ video, onClick }) => {
   return (
-    <Card style={{ width: "18rem" }}>
+    <Card style={{ width: "18rem" }} className={styles.videoCard}>
       <Card.Img
         variant="top"
         src={video.snippet.thumbnails?.medium?.url || ""}

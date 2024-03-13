@@ -11,22 +11,22 @@ const VideoModal = ({ isOpen, onRequestClose, video }) => {
       contentLabel="Video Modal"
       className="Video-modal"
     >
+      <Button
+        variant="link"
+        onClick={onRequestClose}
+        className="btnClass"
+        style={{
+          position: "absolute",
+          top: "0",
+          right: "0",
+          padding: "0",
+          fontSize: "1.5rem",
+          textDecoration: "none",
+        }}
+      >
+        &times;
+      </Button>
       <div>
-        <Button
-          variant="link"
-          onClick={onRequestClose}
-          className="btnClass"
-          style={{
-            position: "absolute",
-            top: "0",
-            right: "0",
-            padding: 0,
-            fontSize: "1.5rem",
-            textDecoration: "none",
-          }}
-        >
-          &times;
-        </Button>
         <iframe
           title={video.snippet.title}
           width="760" //560
