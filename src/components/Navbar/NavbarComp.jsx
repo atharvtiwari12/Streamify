@@ -1,28 +1,50 @@
+// NavbarComp.js
+
+import React, { useState } from "react";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import "./NavbarComp.css";
 import Logo from "../../assets/Logo.png";
+import UserProfileModal from "../UserProfile/UserProfileModal";
+import "./NavbarComp.css";
 
-function NavbarComp() {
+function NavbarComp({ userDetails }) {
+  const [showProfileModal, setShowProfileModal] = useState(false);
+
+  const handleCloseProfileModal = () => setShowProfileModal(false);
+  const handleShowProfileModal = () => setShowProfileModal(true);
+
   return (
-    <Navbar expand="lg" className="bg-body-tertiary ">
-      <Container fluid>
-        <Navbar.Brand href="#home">
-          <img src={Logo} alt="" className="Logo" />
-        </Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+    <>
+      <Navbar expand="lg" className="bg-body-tertiary">
+        <Container fluid>
+          <Navbar.Brand href="#home">
+            <img src={Logo} alt="" className="Logo" />
+          </Navbar.Brand>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
 
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="NavLink me-auto">
-            {/* <Nav.Link href="#nature">Nature</Nav.Link>
-            <Nav.Link href="#motivational">Motivational</Nav.Link>
-            <Nav.Link href="#educational">Educational</Nav.Link>
-            <Nav.Link href="#sports">Sports</Nav.Link> */}
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="NavLink me-auto"></Nav>
+          </Navbar.Collapse>
+          <Nav className="me-auto">
+            {userDetails.picture && (
+              <img
+                src={userDetails.picture}
+                alt={`${userDetails.given_name}'s profile`}
+                className="RightCornerImage"
+                onClick={handleShowProfileModal}
+              />
+            )}
           </Nav>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
+        </Container>
+      </Navbar>
+
+      <UserProfileModal
+        userDetails={userDetails}
+        show={showProfileModal}
+        handleClose={handleCloseProfileModal}
+      />
+    </>
   );
 }
 

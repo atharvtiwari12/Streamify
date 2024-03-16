@@ -7,7 +7,7 @@ function MainPage() {
   return (
     <>
       <div>
-        <NavbarComp></NavbarComp>
+        {/* <NavbarComp></NavbarComp> */}
         <Carousel></Carousel>
         <Playlist />
       </div>
