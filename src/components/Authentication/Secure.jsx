@@ -57,7 +57,41 @@ export default function Secure() {
     );
     const data = await response.json();
     setUserDetails(data);
+    sendUserDetailsToBackend(data);
   };
+
+  const sendUserDetailsToBackend = async (userDetails) => {
+    try {
+      // Extract name and email from userDetails
+      const { name, email } = userDetails;
+
+      // Create a new object containing only name and email
+      const userData = { name, email };
+
+      const response = await fetch("http://localhost:8080/user-details", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(userData),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to send user details to backend");
+      }
+
+      console.log("User details sent successfully");
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  // Example usage
+  // const userDetails = {
+  //     name: 'John',
+  //     email: 'john@example.com'
+  // };
+  // sendUserDetailsToBackend(userDetails);
 
   useEffect(() => {
     const accessToken = Cookies.get("access_token");
