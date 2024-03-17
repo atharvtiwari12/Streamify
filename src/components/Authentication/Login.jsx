@@ -1,6 +1,16 @@
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Cookies from "js-cookie";
+import "./Login.css";
+import Button from "react-bootstrap/Button";
+import Accordion from "react-bootstrap/Accordion";
+import Container from "react-bootstrap/Container";
+import Form from "react-bootstrap/Form";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
+import imageStream from "../../assets/imageStream.jpeg";
+import Logo from "../../assets/Logo.png";
+import kidsImage from "../../assets/kidsImage.png";
 
 export default function Login() {
   const navigate = useNavigate();
@@ -34,43 +44,150 @@ export default function Login() {
   }, [isLoggedin, navigate]);
 
   return (
-    <div className="root">
+    <>
       <div>
-        <h1>Log in with Google</h1>
-        <div className="btn-container">
-          <button className="btn btn-primary" onClick={handleClick}>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 326667 333333"
-              shapeRendering="geometricPrecision"
-              textRendering="geometricPrecision"
-              imageRendering="optimizeQuality"
-              fillRule="evenodd"
-              clipRule="evenodd"
-              width={20}
-              height={20}
-            >
-              <path
-                d="M326667 170370c0-13704-1112-23704-3518-34074H166667v61851h91851c-1851 15371-11851 38519-34074 54074l-311 2071 49476 38329 3428 342c31481-29074 49630-71852 49630-122593m0 0z"
-                fill="#4285f4"
+        <Navbar expand="lg">
+          <Container fluid>
+            <Navbar.Brand href="#">
+              <img
+                src={Logo}
+                height="40"
+                className="d-inline-block align-top"
+                alt="Logo"
               />
-              <path
-                d="M166667 333333c44999 0 82776-14815 110370-40370l-52593-40742c-14074 9815-32963 16667-57777 16667-44074 0-81481-29073-94816-69258l-1954 166-51447 39815-673 1870c27407 54444 83704 91852 148890 91852z"
-                fill="#34a853"
-              />
-              <path
-                d="M71851 199630c-3518-10370-5555-21482-5555-32963 0-11482 2036-22593 5370-32963l-93-2209-52091-40455-1704 811C6482 114444 1 139814 1 166666s6482 52221 17777 74814l54074-41851m0 0z"
-                fill="#fbbc04"
-              />
-              <path
-                d="M166667 64444c31296 0 52406 13519 64444 24816l47037-45926C249260 16482 211666 1 166667 1 101481 1 45185 37408 17777 91852l53889 41853c13520-40185 50927-69260 95001-69260m0 0z"
-                fill="#ea4335"
-              />
-            </svg>
-            Log in with Google
-          </button>
-        </div>
+            </Navbar.Brand>
+            <Navbar.Toggle aria-controls="navbarScroll" />
+            <Navbar.Collapse id="navbarScroll">
+              <Nav
+                className="me-auto my-2 my-lg-0"
+                style={{ maxHeight: "30px" }}
+                navbarScroll
+              >
+                <Nav.Link href="#home">Home</Nav.Link>
+              </Nav>
+              <Form className="d-flex">
+                <Form.Control
+                  type="search"
+                  placeholder="Search"
+                  className="me-2"
+                  aria-label="Search"
+                />
+              </Form>
+              <Button variant="outline-success" onClick={handleClick}>
+                SignIn
+              </Button>
+            </Navbar.Collapse>
+          </Container>
+        </Navbar>
       </div>
-    </div>
+      <div className="sectionFirst">
+        <div className="overlay"></div>
+        <Container>
+          <div className="text-box">
+            <h2>Unlimited movies, TV shows and more</h2>
+            <div className="text-box">
+              <p>Watch anywhere. Cancel anytime.</p>
+            </div>
+            <div className="text-box">
+              <p>
+                Ready to watch? Enter your email to create or restart your
+                membership.
+              </p>
+            </div>
+          </div>
+        </Container>
+      </div>
+
+      <div className="section Secondsection">
+        <Container>
+          <div className="section-content">
+            <div className="image-box">
+              <img src={imageStream} alt="Image 2" />
+            </div>
+            <div className="text-box">
+              <h2>Watch Here</h2>
+              <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                Delectus dignissimos quisquam nobis amet dolorem temporibus
+                facere enim inventore dicta, maxime officia illo reiciendis
+                praesentium magnam, repellendus voluptas perferendis rerum!
+              </p>
+            </div>
+          </div>
+        </Container>
+      </div>
+
+      <div className="section Thirdsection">
+        <Container>
+          <div className="section-content">
+            <div className="text-box">
+              <h2>Content for kids</h2>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Blanditiis unde sunt reprehenderit. Veniam, culpa dicta rerum
+                omnis temporibus impedit praesentium consequuntur reprehenderit
+                officiis! Ea fugit architecto modi cupiditate veritatis
+                laudantium quos facilis dolorum.
+              </p>
+            </div>
+            <div className="image-box">
+              <img src={kidsImage} alt="Image 3" />
+            </div>
+          </div>
+        </Container>
+      </div>
+      <div className="custom-accordion">
+        <h2>Frequently Asked Questions</h2>
+        <Accordion defaultActiveKey="0" flush>
+          <Accordion.Item eventKey="0">
+            <Accordion.Header>Accordion Item #1</Accordion.Header>
+            <Accordion.Body>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+              sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </Accordion.Body>
+          </Accordion.Item>
+          <Accordion.Item eventKey="1">
+            <Accordion.Header>Accordion Item #2</Accordion.Header>
+            <Accordion.Body>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+              sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </Accordion.Body>
+          </Accordion.Item>
+        </Accordion>
+      </div>
+      <footer className="footer">
+        <Container>
+          <div className="footer-content">
+            <div className="footer-section">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
+                faucibus magna ac nunc laoreet, ac tempor nunc dignissim.
+              </p>
+              <ul>
+                <li>
+                  <a href="#">Link 1</a>
+                </li>
+                <li>
+                  <a href="#">Link 2</a>
+                </li>
+                <li>
+                  <a href="#">Link 3</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </Container>
+      </footer>
+    </>
   );
 }
