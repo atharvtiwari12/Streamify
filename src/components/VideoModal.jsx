@@ -29,8 +29,8 @@ const VideoModal = ({ isOpen, onRequestClose, video }) => {
       <div>
         <iframe
           title={video.snippet.title}
-          width="760" //560
-          height="415" //315
+          width="960" //560
+          height="565" //315
           src={`https://www.youtube.com/embed/${video.snippet.resourceId.videoId}`}
           allowFullScreen
         ></iframe>

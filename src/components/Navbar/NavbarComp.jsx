@@ -16,7 +16,7 @@ function NavbarComp({ userDetails }) {
 
   return (
     <>
-      <Navbar expand="lg" className="bg-body-tertiary">
+      <Navbar expand="lg">
         <Container fluid>
           <Navbar.Brand href="#home">
             <img src={Logo} alt="" className="Logo" />

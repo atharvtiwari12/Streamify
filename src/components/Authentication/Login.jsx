@@ -51,7 +51,7 @@ export default function Login() {
             <Navbar.Brand href="#">
               <img
                 src={Logo}
-                height="40"
+                height="50"
                 className="d-inline-block align-top"
                 alt="Logo"
               />
@@ -62,9 +62,7 @@ export default function Login() {
                 className="me-auto my-2 my-lg-0"
                 style={{ maxHeight: "30px" }}
                 navbarScroll
-              >
-                <Nav.Link href="#home">Home</Nav.Link>
-              </Nav>
+              ></Nav>
               <Form className="d-flex">
                 <Form.Control
                   type="search"
@@ -84,14 +82,14 @@ export default function Login() {
         <div className="overlay"></div>
         <Container>
           <div className="text-box">
-            <h2>Unlimited movies, TV shows and more</h2>
+            <h2>Endless Entertainment, One Click Away</h2>
             <div className="text-box">
-              <p>Watch anywhere. Cancel anytime.</p>
+              <p>Expand your horizons with our diverse range of content.</p>
             </div>
             <div className="text-box">
               <p>
-                Ready to watch? Enter your email to create or restart your
-                membership.
+                Join now and experience the convenience of unlimited streaming
+                at your fingertips.
               </p>
             </div>
           </div>
@@ -107,10 +105,10 @@ export default function Login() {
             <div className="text-box">
               <h2>Watch Here</h2>
               <p>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                Delectus dignissimos quisquam nobis amet dolorem temporibus
-                facere enim inventore dicta, maxime officia illo reiciendis
-                praesentium magnam, repellendus voluptas perferendis rerum!
+                Stream a wide selection of movies, TV shows, and documentaries
+                on demand. Explore our curated collection of entertainment and
+                dive into captivating stories from around the world. Start
+                watching now!
               </p>
             </div>
           </div>
@@ -123,11 +121,10 @@ export default function Login() {
             <div className="text-box">
               <h2>Content for kids</h2>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Blanditiis unde sunt reprehenderit. Veniam, culpa dicta rerum
-                omnis temporibus impedit praesentium consequuntur reprehenderit
-                officiis! Ea fugit architecto modi cupiditate veritatis
-                laudantium quos facilis dolorum.
+                Discover family-friendly entertainment with our collection of
+                kid-approved movies and TV series. From animated adventures to
+                educational content, find something fun and safe for children of
+                all ages to enjoy.
               </p>
             </div>
             <div className="image-box">
@@ -140,27 +137,23 @@ export default function Login() {
         <h2>Frequently Asked Questions</h2>
         <Accordion defaultActiveKey="0" flush>
           <Accordion.Item eventKey="0">
-            <Accordion.Header>Accordion Item #1</Accordion.Header>
+            <Accordion.Header>
+              Is my personal information secure on your website?
+            </Accordion.Header>
             <Accordion.Body>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum.
+              We take user privacy and data security seriously. Your personal
+              information is encrypted and stored securely according to industry
+              standards. For more details, please refer to our Privacy Policy.
             </Accordion.Body>
           </Accordion.Item>
           <Accordion.Item eventKey="1">
-            <Accordion.Header>Accordion Item #2</Accordion.Header>
+            <Accordion.Header>
+              How often do you update your video library?
+            </Accordion.Header>
             <Accordion.Body>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum.
+              We regularly update our video library with new titles and content.
+              You can expect fresh additions to our catalog on a weekly or
+              monthly basis.
             </Accordion.Body>
           </Accordion.Item>
         </Accordion>
@@ -169,21 +162,11 @@ export default function Login() {
         <Container>
           <div className="footer-content">
             <div className="footer-section">
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
-                faucibus magna ac nunc laoreet, ac tempor nunc dignissim.
+              <p style={{ fontSize: "17px" }}>
+                Explore a world of entertainment with our diverse collection of
+                videos. Discover new movies, TV shows, and documentaries! <br />
+                | Copyright © 2024 Streamify |
               </p>
-              <ul>
-                <li>
-                  <a href="#">Link 1</a>
-                </li>
-                <li>
-                  <a href="#">Link 2</a>
-                </li>
-                <li>
-                  <a href="#">Link 3</a>
-                </li>
-              </ul>
             </div>
           </div>
         </Container>

@@ -4,7 +4,6 @@
   padding: 20px 0;
 }
 
-/*  */
 .section-content {
   display: flex;
   align-items: center;
@@ -120,10 +119,6 @@ margin-top: 10px;
 }
 
 
-
-
-
-
 .Thirdsection {
   height: auto; 
 }
@@ -134,7 +129,6 @@ margin-top: 10px;
 }
 .Thirdsection .section-content {
   display: flex;
-  /* justify-content: space-between;  */
   align-items: center; 
 }
 
@@ -151,8 +145,8 @@ margin-top: 10px;
 }
 .Thirdsection .section-content {
   display: flex;
-  justify-content: space-between; /* Align elements horizontally */
-  align-items: center; /* Center items vertically */
+  justify-content: space-between; 
+  align-items: center; 
 }
 
 .Thirdsection .image-box{

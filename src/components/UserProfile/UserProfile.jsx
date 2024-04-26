@@ -14,7 +14,7 @@ function UserProfile({ userDetails }) {
           <p>Welcome</p>
           <h1 className="name">{userDetails.name}</h1>
           <p className="email">{userDetails.email}</p>
-          <p className="locale">{`Locale: ${userDetails.locale}`}</p>
+          {/* <p className="locale">{`Locale: ${userDetails.locale}`}</p> */}
         </div>
       </div>
     </>

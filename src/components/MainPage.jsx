@@ -6,7 +6,7 @@ import Carousel from "./CarouselComp/Carousel";
 function MainPage() {
   return (
     <>
-      <div>
+      <div style={{ backgroundColor: "#f0f0f0", minHeight: "100vh" }}>
         {/* <NavbarComp></NavbarComp> */}
         <Carousel></Carousel>
         <Playlist />

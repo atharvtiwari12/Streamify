@@ -15,7 +15,7 @@ const Playlist = () => {
       const response = await axios.get(
         "https://youtube.googleapis.com/youtube/v3/playlists?part=snippet&channelId=UC6I2NJRHPwi47BRaZsHEFRg&maxResults=10&key=AIzaSyAp6ibgxpzzCcvHRgNxRa5ApMWLQFs11NQ"
       );
-
+      //UC6I2NJRHPwi47BRaZsHEFRg
       const playlistsData = response.data.items || [];
 
       const playlists = await Promise.all(
