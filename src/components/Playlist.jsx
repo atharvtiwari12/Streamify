@@ -12,21 +12,16 @@ const Playlist = () => {
 
   const fetchPlaylists = async () => {
     try {
-      const apiKey = import.meta.env.VITE_REACT_APP_Youtube_API_KEY;
-      const channelId = "UC6I2NJRHPwi47BRaZsHEFRg";
-      const maxResults = 20;
-
-      const url = `https://youtube.googleapis.com/youtube/v3/playlists?part=snippet&channelId=${channelId}&maxResults=${maxResults}&key=${apiKey}`;
-      console.log("API Request URL:", url);
-
-      const response = await axios.get(url);
-
+      const response = await axios.get(
+        "https://youtube.googleapis.com/youtube/v3/playlists?part=snippet&channelId=UC6I2NJRHPwi47BRaZsHEFRg&maxResults=10&key=AIzaSyAp6ibgxpzzCcvHRgNxRa5ApMWLQFs11NQ"
+      );
+      //UC6I2NJRHPwi47BRaZsHEFRg
       const playlistsData = response.data.items || [];
 
-      const playlistsWithVideos = await Promise.all(
+      const playlists = await Promise.all(
         playlistsData.map(async (playlistItem) => {
           const videosResponse = await axios.get(
-            `https://youtube.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=${maxResults}&playlistId=${playlistItem.id}&key=${apiKey}`
+            `https://youtube.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=10&playlistId=${playlistItem.id}&key=AIzaSyAp6ibgxpzzCcvHRgNxRa5ApMWLQFs11NQ`
           );
 
           playlistItem.videos = videosResponse.data.items || [];
@@ -34,18 +29,10 @@ const Playlist = () => {
         })
       );
 
-      setPlaylists(playlistsWithVideos);
+      setPlaylists(playlists);
       setLoading(false);
     } catch (error) {
-      if (axios.isAxiosError(error)) {
-        console.error("Axios Error:", error.toJSON());
-        if (error.response) {
-          console.error("Response Data:", error.response.data);
-          console.error("Response Status:", error.response.status);
-        }
-      } else {
-        console.error("General Error:", error);
-      }
+      console.error("Error fetching playlists:", error);
       setLoading(false);
     }
   };
@@ -55,8 +42,10 @@ const Playlist = () => {
   }, []);
 
   const openModal = (video) => {
-    setSelectedVideo(video);
-    setModalIsOpen(true);
+    if (!modalIsOpen) {
+      setSelectedVideo(video);
+      setModalIsOpen(true);
+    }
   };
 
   const closeModal = () => {
@@ -70,7 +59,7 @@ const Playlist = () => {
         <p>Loading...</p>
       ) : playlists.length > 0 ? (
         playlists.map((playlist) => (
-          <div key={playlist.id} className={styles.playlist}>
+          <div key={playlist.id} className={styles.playlistContainer}>
             <h3>{playlist.snippet?.title}</h3>
             <div className={styles.videosContainer}>
               {playlist.videos.length > 0 ? (
@@ -88,7 +77,7 @@ const Playlist = () => {
           </div>
         ))
       ) : (
-        <p>No playlists available.</p>
+        <p>No Data available.</p>
       )}
 
       {selectedVideo && (

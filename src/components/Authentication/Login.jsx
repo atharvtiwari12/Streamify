@@ -18,7 +18,8 @@ export default function Login() {
 
   const handleClick = () => {
     const callbackUrl = `${window.location.origin}`;
-    const googleClientId = import.meta.env.VITE_REACT_APP_GOOGLE_CLIENT_ID;
+    const googleClientId =
+      "566026556437-aurgaofmu339lodv5cf845c498lhh092.apps.googleusercontent.com";
     const targetUrl = `https://accounts.google.com/o/oauth2/auth?redirect_uri=${encodeURIComponent(
       callbackUrl
     )}&response_type=token&client_id=${googleClientId}&scope=openid%20email%20profile`;
